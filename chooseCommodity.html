@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/chooseCommodity.css" />
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/methods.js" type="text/javascript" charset="utf-8"></script>
+		<title>代理注册</title>
+	</head>
+	<body>
+		<div id="app">
+			<div id="mask"></div>
+		    <div id="login">
+		        <div class="top">
+		        	<img :src="cover"/>
+		        	<div class="name_price">
+		        		<span class="name">{{productName}}</span>
+		        		<span class="prcie">￥{{price}}</span>
+		        	</div>
+		        </div>
+		        <div class="bottoma">
+		        	<span class="goumai">购买数量</span>
+		        	<div class="righta">
+		        		<span class="num">
+							<span class="reductionBtn iconfont iconjian">-</span>
+							<span class="numbs">0</span>
+							<span class="addBtn iconfont iconjia specliClo">+</span>
+						</span>
+						<p class="kucuna">库存:&nbsp;&nbsp;{{totalStock}}</p>
+		        	</div>
+		        </div>
+		    </div>
+		    
+		    <div id="maska"></div>
+		    <div id="logina">
+		        <div class="loginaTop">
+		        	<div class="left">
+		        		<img src="imgs/delete.png"/>
+		        		<span class="qingkong">清空</span>
+		        	</div>
+		        	<span class="centera">已选商品</span>
+		        	<img src="imgs/gaunbi.png" class="guanbi" @click="guanbia"/>
+		        </div>
+		        <div class="proItem">
+		        	<div class="name_pricea">
+		        		<span class="mingzi">气垫美颜CC粉底液</span>
+		        		<span class="youbian">￥106.00</span>
+		        	</div>
+		        	<span class="numa">
+							<span class="reductionBtn iconfont iconjian">-</span>
+							<span class="numbs">1</span>
+							<span class="addBtn iconfont iconjia specliClo">+</span>
+						</span>
+		        </div>
+		    </div>
+			<div class="header">
+				<span class="left">当前等级:&nbsp;&nbsp;{{level}}</span>
+				<span class="right" @click="back">重新选择</span>
+			</div>
+			<div class="center">
+				<span class="content">选择商品，当前购买云订单，<b>点击此处</b>可切换</span>
+			</div>
+			<div class="section">
+				<div class="left">
+					<div class="leftClassfiction active">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="title">测试</span>
+					</div>
+					<div class="leftClassfiction">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="title">测试</span>
+					</div>
+					<div class="leftClassfiction">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="title">测试</span>
+					</div>
+				</div>
+				<div class="right">
+					<div class="top">
+						<span class="title">测试</span>
+					</div>
+					<div class="productItem" v-for="item in produnct">
+						<img :src="item.cover" class="zhuimg"/>
+						<div class="name_xiaol_price">
+							<span class="name">{{item.productName}}</span>
+							<div class="kucun_xiaol">
+								<span class="kucun">库存:&nbsp;&nbsp;{{item.totalStock}}</span>
+								<span class="xiaol">销量:&nbsp;&nbsp;{{item.sales}}</span>
+							</div>
+							<div class="price_gouwuche">
+								<span class="price">￥{{item.price}}</span>
+								<img src="imgs/gouwuche.png" class="gouwuche" @click="btn(item.pid)"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<img src="imgs/borderlands_tiny_tina.jpg" id="btna"/>
+				<div class="heji">
+					<span class="top">合计:&nbsp;&nbsp;&nbsp;<b>￥{{totalPrice}}</b></span>
+					<span class="haiche">还差￥{{priceDifference}}</span>
+				</div>
+				<button class="submit" @click="submit">下单购买</button>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	//获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //接收URL中的参数booksId
+    var levelId = getUrlParam('levelId');
+    console.log(levelId)
+    
+	var serverHost = getServerHost();
+	
+	var app = new Vue({
+		el:'#app',
+		data:{
+			level:'',
+			produnct:[],
+			cover:'',
+			productName:'',
+			price:'',
+			totalStock:'',
+			totalPrice:'0.00',
+			priceDifference:'0',
+			nums:0
+		},
+		methods:{
+			back:function(){
+				window.history.go(-1);
+			},
+			guanbia:function(){
+				document.getElementById("logina").style.display = 'none'
+				document.getElementById("maska").style.display = 'none'
+			},
+			submit:function(){
+				var that = app;
+				if(that.totalPrice<that.priceDifference){
+					var chajia = that.priceDifference-that.totalPrice
+					alert("还差"+chajia+"才能购买")
+				} else {
+					window.location.href = 'registration.html';
+				}
+			},
+			jianshao:function(){
+				nums = $(this).next('span').html();
+				$(this).addClass('specliClo');
+				$('.addBtn').removeClass('specliClo');
+				nums = parseInt(nums);
+				if (nums > 1) {
+					nums -= 1;
+					console.log()
+					$(this).next('span').html(nums);
+				}
+			},
+			zerngjia:function(){
+				$(this).addClass('specliClo');
+				$('.reductionBtn').removeClass('specliClo');
+				nums = $(this).prev('span').html();
+				nums = parseInt(nums);
+				if (nums >= 0) {
+					nums += 1;
+					$(this).prev('span').html(nums);
+				}
+			},
+			btn:function(e){
+				var that = app;
+				document.getElementById("mask").style.display="block";
+				document.getElementById("login").style.display="inline-block";
+				$.ajax({
+					type:"get",
+					url:serverHost + "/products/info",
+					async:false,
+					data:{
+						pid:e
+					},
+					success:function(data){
+						 that.cover = data.data.cover;
+						 that.price = data.data.price;
+						 that.productName = data.data.product_name;
+						 that.totalStock = data.data.total_stock
+					}
+				});
+			},
+			findData:function(){
+				var that = app;
+				if(levelId == 0){
+					that.level = '董事';
+					that.priceDifference = '29500.00'
+				}else if(levelId == 1){
+					that.level = '钻石';
+					that.priceDifference = '7400.00'
+				}else if(levelId == 2){
+					that.level = '省代';
+					that.priceDifference = '940.00'
+				}else if(levelId == 3){
+					that.level = '市代'
+				}else if(levelId == 4){
+					that.level = 'VIP399套餐'
+				}
+				$.ajax({
+					url:serverHost + '/products/list',
+					type:'get',
+					dataType:'json',
+					data:{
+						productType:0
+					},
+					success:function(data){
+						that.produnct = data.data
+					},
+					error:function(){
+						console.log(12312)
+					}
+				})
+			}
+		}
+	})
+	let filter = document.getElementsByClassName("leftClassfiction")
+	for(let i=0;i<filter.length;i++){
+		filter[i].addEventListener('click',function(){
+			filter[i].classList.add('active')
+			for(let j=0;j<filter.length;j++){
+				if(i!=j){
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+	app.findData()
+</script>
+<script type="text/javascript">
+	window.onload=function(){
+        var btn=document.getElementById("btn");
+        var mask=document.getElementById("mask");
+        var login=document.getElementById("login");
+//      btn.onclick=function(){
+//          mask.style.display="block";
+//          login.style.display="inline-block";
+//      };
+        var close_login=document.getElementById("mask");
+        close_login.onclick=function(){
+            mask.style.display="none";
+            login.style.display="none";
+        };
+        
+        var btna=document.getElementById("btna");
+        var maska=document.getElementById("maska");
+        var logina=document.getElementById("logina");
+        btna.onclick=function(){
+            maska.style.display="block";
+            logina.style.display="inline-block";
+        };
+        var close_logina=document.getElementById("maska");
+        close_logina.onclick=function(){
+            maska.style.display="none";
+            logina.style.display="none";
+        };
+ };
+</script>

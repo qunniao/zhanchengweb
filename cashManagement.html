@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cashManagement.css"/>
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title>提现管理</title>
+	</head>
+	<body>
+		<div class="header">
+			<img src="imgs/summer_beach.jpg"/>
+			<div class="guanli">
+				<span class="price">0.00</span>
+				<div class="guanliLeft">
+					<span class="leijitixian">累计提现</span>
+					<span class="duoshaotixian">0.00提现中</span>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<div class="centerLeft">
+				<span class="time">2019年10月</span>
+				<img src="imgs/GoBottom.png"/>
+			</div>
+			<div class="centerRight">
+				<span class="shaixuan">筛选</span>
+				<img src="imgs/screen.png"/>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="bottomTop">
+				<div class="tixianItem active">
+					<span class="tianxianName">我提现的(0)</span>
+				</div>
+				<div class="tixianItem">
+					<span class="tianxianName">向我提现(0)</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	let filter = document.getElementsByClassName("tixianItem")
+	for(let i=0;i<filter.length;i++){
+		filter[i].addEventListener('click',function(){
+			filter[i].classList.add('active')
+			for(let j=0;j<filter.length;j++){
+				if(i!=j){
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+</script>

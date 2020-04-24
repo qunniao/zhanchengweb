@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/aboutus.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <title>关于我们</title>
+</head>
+<body>
+    <header>
+        <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+        <nav class="navbarcss">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./case.html">案例</a></li>
+                <li><a href="./prodect.html">产品</a></li>
+                <li><a href="./channelagent.html">渠道代理</a></li>
+                <li><a href="./news.html">新闻资讯</a></li>
+                <li class="navcheck"><a href="./aboutus.html">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="companyjs">
+            <h1>杭州湛程网络科技有限公司</h1>
+            <div class="conpanytextone">
+                湛程总部在杭州西湖区，创立于2018年，是新型的企业移动营销服务商。致力于为企业移动信息化提供领先的移动互联网解决方案。我们秉承用高科技驱动商业创新的理念，在为超过1000+家企业提供技术服务。我们的产品融合移动研发、云计算、大数据和人工智能等高新技术，让企业零门槛使用高新技术驱动商业创新。
+            </div>
+            <div class="conpanytexttwo">
+                湛程总部在杭州西湖区，创立于2018年，是新型的企业移动营销服务商。致力于为企业移动信息化提供领先的移动互联网解决方案。我们秉承用高科技驱动商业创新的理念，在为超过1000+家企业提供技术服务。我们的产品融合移动研发、云计算、大数据和人工智能等高新技术，让企业零门槛使用高新技术驱动商业创新。
+            </div>
+        </div>
+    </header>
+    <div class="developmenthistory">
+        <h2>发展历史</h2>
+        <div class="developmentbox">
+            <img src="./img/aboutus/abooutpic1.png">
+            <ul class="developtext">
+                <li><label>2019年10月</label>湛程小程序上线，查看案例、购买产品更方便</li>
+                <li><label>2019年9月</label>分公司华企互联科技有限公司成立</li>
+                <li><label>2019年8月</label>公司办公地址从余杭区搬到西湖区</li>
+                <li><label>2019年6月</label>累计服务客户超过30家</li>
+                <li><label>2018年10月</label>杭州湛程网络科技有限公司成立</li>
+                <li><label>2018年3月</label>湛程工作室成立，急急令技术部原班人马</li>
+                <li><label>2018年2月</label>急急令APP上线</li>
+                <li><label>2017年10月</label>杭州急急令公司成立，湛程公司前身</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ourteam">
+        <div class="ourteamleft">
+            <h3>我们的团队</h3>
+            <div class="ourteamtext">我们的小伙伴儿们是一群来自五湖四海的90后创业者，我们有梦想有追求我们也期待更多年轻的创业伙伴加入我们、一起奋斗、一起成长！</div>
+            <div class="ourteamtext">我们提供良好且舒适的办公环境，优越的员工福利待遇，吸引了许多经验丰富的技术成员，研发更优质的企业产品。并且，我们极为重视团队协作氛围通过丰富的团队建设活动，让团队成员之间的沟通更加透明高效、协作流畅</div>
+            <div class="ourteamtext">此外，我们拥有着完善的员工培养计划，定期开展企业文化活动、对员工进行知识体系的深化培训、让每一位团队成员都能深挖自己的潜力，取长补短，极大发挥团队合作力量。</div>
+            <div class="ourteamtext nomargin">我们要用技术实力宣告，用更少的时间更少的人力、更完美的技术支撑、更富创意的解决方案，实现改变世界的产品！</div>
+        </div>
+       <img class="ourteamright" src="./img/aboutus/aboutpic2.png">
+    </div>
+    <div class="workadress">
+        <div class="woradressheader">
+            <img src="./img/aboutus/aboutpic3.png">
+            <h3>办公环境</h3>
+            <div>空间共享、资源共享、创业新时代</div>
+        </div>
+        <ul class="workadressul">
+            <li><img src="./img/aboutus/workpic1.jpg"></li>
+            <li><img src="./img/aboutus/workpic2.jpg"></li>
+            <li><img src="./img/aboutus/workpic3.jpg"></li>
+            <li><img src="./img/aboutus/workpic4.jpg"></li>
+            <li><img src="./img/aboutus/workpic5.jpg"></li>
+            <li><img src="./img/aboutus/workpic6.jpg"></li>
+        </ul>
+    </div>
+    <div class="teamactive">
+        <ul class="teamactivelist">
+            <li class="activeone">
+                <h3>团队活动</h3>
+                <div>乐观向上 永不言败</div>
+            </li>
+            <li class="activetwo">
+                <img src="./img/aboutus/teamactive1.png">
+            </li>
+            <li class="activethree">
+                <img src="./img/aboutus/teamactive2.png">
+            </li>
+            <li class="activefour">
+                <img src="./img/aboutus/teamactive3.png">
+            </li>
+            <li class="activefive">
+                <img src="./img/aboutus/teamactive4.jpg">
+            </li>
+        </ul>
+    </div>
+    <div class="callus">
+        <div class="calluscontent">
+            <h3>我们的成功离不开您的支持、感谢有您的参与!</h3>
+            <div class="linebox">
+                <div class="newenglishtext"><div class="newsline">—————————————————————</div>联系方式<div class="newslinetwo">—————————————————————</div></div>
+            </div>
+            <div class="adresstext">杭州总部：</div>
+            <div class="adresslabel"><img class="wximg" src="./img/wx.png"><label>微信：15057192359</label></div>
+            <div class="adresslabel"><img class="qqimg" src="./img/qq.png"><label>Q Q：578403998</label></div>
+            <div class="adresslabel"><img class="phoneimg" src="./img/phone.png"><label>电话：400-992-5090</label></div>
+            <div class="adresslabel"><img class="adressimg" src="./img/dz.png"><div class="dztext">地址：</div><label class="adresslabels">杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</label></div>
+        </div>
+    </div>
+    <div class="navigationbottom">
+        <div class="navigationbox">
+            <div class="navigationcontent">
+                <div class="bottomlogos">
+                    <img  src="./img/bottomlogo.png">
+                    <label>湛程</label>
+                </div>
+                <div class="bottomline"></div>
+                <ul class="bottomulone">
+                    <li class="bottomultitle">资讯栏目</li>
+                    <li>APP开发费用</li>
+                    <li>商城APP开发</li>
+                    <li>小程序开发</li>
+                    <li>新零售解决方案</li>
+                </ul>
+                <ul class="bottomultwo">
+                    <li class="bottomultitle">湛程</li>
+                    <li>APP开发</li>
+                    <li>渠道代理</li>
+                    <li>案例</li>
+                    <li>新闻中心</li>
+                </ul>
+                <ul class="bottomulthree">
+                    <li class="bottomultitle">公司</li>
+                    <li>关于我们</li>
+                    <li>使用协议</li>
+                </ul>
+                <ul class="bottomulfour">
+                    <li class="bottomultitle">咨询电话</li>
+                    <li class="bottomulgreen">400-992-5090</li>
+                    <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                </ul>
+                <div class="bottomrightlogo">
+                    <label>湛程公众号</label>
+                    <img  src="./img/erweima.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

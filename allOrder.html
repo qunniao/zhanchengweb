@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/allOrder.css"/>
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title>订单列表</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="leixing">
+				<span class="leixingTitle">全部类型</span>
+				<img src="imgs/GoBottom.png"/>
+			</div>
+			<div class="search">
+				<input type="text"/>
+				<img src="imgs/search.png"/>
+			</div>
+		</div>
+		<div class="classificationList">
+			<div class="classificationItem">
+				<span class="classificationItemTitle active">全部</span>
+			</div>
+			<div class="classificationItem">
+				<span class="classificationItemTitle">待付款</span>
+			</div>
+			<div class="classificationItem">
+				<span class="classificationItemTitle">待发货</span>
+			</div>
+			<div class="classificationItem">
+				<span class="classificationItemTitle">待发货</span>
+			</div>
+		</div>
+		<div class="orderItem">
+			<div class="oderItemTop">
+				<span class="cai">采</span>
+				<span class="number">C1571191034148251</span>
+				<span class="leixinga">待发货</span>
+			</div>
+			<div class="orderDetails">
+				<div class="labelList">
+					<span class="lableItem">云订单</span>
+					<span class="lableItem">首进</span>
+				</div>
+				<div class="orderImgList">
+					<div class="imgList">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+					</div>
+					<div class="totalNum">
+						<span class="total">共3件</span>
+						<span class="right"></span>
+					</div>
+				</div>
+				<div class="totalPrice">
+					<span class="totalPirceName">合计：￥174.80</span>
+				</div>
+			</div>
+			<div class="voucher">
+				<a href="">
+					<span class="viewVoucher">查看凭证</span>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	let filter = document.getElementsByClassName("classificationItemTitle")
+	for(let i=0;i<filter.length;i++){
+		filter[i].addEventListener('click',function(){
+			filter[i].classList.add('active')
+			for(let j=0;j<filter.length;j++){
+				if(i!=j){
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+</script>

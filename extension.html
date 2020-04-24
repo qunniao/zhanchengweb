@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/extension.css"/>
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="header">
+				<span class="title">查看操作视频，请点击<b>这里</b></span>
+				<img src="imgs/close.png" @click='close'/>
+			</div>
+			<div class="search">
+				<input type="text" placeholder="请输入商品名称"/>
+				<img src="imgs/search.png"/>
+			</div>
+			<div class="productList">
+				<div class="productItem">
+					<a href="poster.html">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="name">甘菊芳香精露笛梵滋润舒缓修护</span>
+						<div class="price_share">
+							<span class="price">0.00</span>
+							<img src="imgs/share.png"/>
+						</div>
+						<div class="estimate">
+							<span class="yuji">预计赚:-156.0</span>
+						</div>
+					</a>
+				</div>
+				<div class="productItem">
+					<a href="">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="name">甘菊芳香精露笛梵滋润舒缓修护</span>
+						<div class="price_share">
+							<span class="price">0.00</span>
+							<img src="imgs/share.png"/>
+						</div>
+						<div class="estimate">
+							<span class="yuji">预计赚:-156.0</span>
+						</div>
+					</a>
+				</div>
+				<div class="productItem">
+					<a href="">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="name">甘菊芳香精露笛梵滋润舒缓修护</span>
+						<div class="price_share">
+							<span class="price">0.00</span>
+							<img src="imgs/share.png"/>
+						</div>
+						<div class="estimate">
+							<span class="yuji">预计赚:-156.0</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			
+		},
+		methods:{
+			close:function(){
+				document.getElementsByClassName('header').style.display = 'none'
+			}
+		}
+	})
+</script>

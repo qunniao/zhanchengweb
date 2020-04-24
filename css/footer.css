@@ -1,0 +1,120 @@
+/* 底部导航 */
+.navigationbottom{
+    width: 100%;
+    background: #2E2F34;
+    height: 11.7rem;
+}
+.navigationbox{
+    width: 100%;
+    background: #333438;
+    height: 9.4rem;
+}
+.navigationcontent{
+    width: 34rem;
+    margin:0 auto;
+    padding-top: 2rem;
+    overflow: hidden;
+    /* height: ; */
+}
+.bottomlogos{
+    float: left;
+    width: 1.65rem;
+}
+.bottomlogos>img{
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.6rem;
+    margin-bottom: 0.45rem;
+}
+.bottomlogos>label{
+    width: 1.6rem;
+    display: inline-block;
+    font-size: 0.75rem;  
+    color: #92949B;
+}
+.bottomline{
+    float: left;
+    margin-left: 2rem;
+    height: 5.6rem;
+    border-right: 1px solid #92949B;
+}
+/* 底部导航1 */
+.bottomulone{
+    float: left;
+    margin-left: 1.5rem;
+    overflow: hidden;
+    width: 3.7rem;
+    height: 5.8rem;
+    color: #8D8F96;
+    font-size: 0.4rem;
+}
+.bottomulone>li{
+    margin-bottom: 0.65rem;
+}
+.bottomultitle{
+    color:#fff;
+    font-size: 0.5rem;
+}
+.bottomulgreen{
+    font-size: 0.6rem;
+    color: #2CCE11;
+}
+/* 底部导航2 */
+.bottomultwo{
+    float: left;
+    margin-left: 1.7rem;
+    overflow: hidden;
+    width: 2.05rem;
+    height: 5.8rem;
+    color: #8D8F96;
+    font-size: 0.4rem;
+}
+.bottomultwo>li{
+    margin-bottom: 0.65rem;
+}
+/* 底部导航3 */
+.bottomulthree{
+    float: left;
+    margin-left: 2.5rem;
+    overflow: hidden;
+    width: 2.15rem;
+    height: 5.35rem;
+    color: #8D8F96;
+    font-size: 0.4rem;
+}
+.bottomulthree>li{
+    margin-bottom: 0.65rem;
+}
+/* 底部导航4 */
+.bottomulfour{
+    float: left;
+    margin-left: 2.25rem;
+    overflow: hidden;
+    width: 7.15rem;
+    height: 5.35rem;
+    color: #8D8F96;
+    font-size: 0.4rem;
+}
+.bottomulfour>li{
+    line-height: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+/* 二维码 */
+.bottomrightlogo{
+    float: left;
+    width: 4.2rem;
+    margin-left: 3.1rem;
+}
+.bottomrightlogo>img{
+    display: inline-block;
+    width: 4.2rem;
+    height: 4.2rem;
+}
+.bottomrightlogo>label{
+    margin-bottom: 0.5rem;
+    width: 4.2rem;
+    text-align: center;
+    display: inline-block;
+    font-size: 0.55rem;  
+    color: #fff;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/case.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="./js/allajax.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <title>案例界面</title>
+</head>
+<body>
+    <header>
+        <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+        <nav class="navbarcss">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li class="navcheck"><a href="./case.html">案例</a></li>
+                <li><a href="./prodect.html">产品</a></li>
+                <li><a href="./channelagent.html">渠道代理</a></li>
+                <li><a href="./news.html">新闻资讯</a></li>
+                <li><a href="./aboutus.html">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="productcontent" id="app">
+        <!-- 筛选栏 -->
+        <div class="prodectchange">
+            <div class="productulbox">
+                <label class="producttype">类型：</label>
+                <ul>
+                    <li v-for='item in type' @click='changefindData("1",item.id,1)' :class='{ischeck:item.check==true}'>{{item.name}}</li>
+                </ul>
+            </div>
+            <div class="productulbox">
+                <label class="producttype">标签：</label>
+                <ul>
+                        <li  @click='changefindData("2",-1,1)' :class='{ischeck:setrchtwo==""}'>全部</li>
+                    <li  v-for='item in typetwo' @click='changefindData("2",item.id,2)' :class='{ischeck:item.check==true}'>{{item.name}}</li>
+                </ul>
+            </div>
+            <div class="prodecttypebox">
+                <!-- <div class="downshowbtn" @click='changprice()'>
+                    金额<img :src="caasetype==1?'./img/up.png':'./img/down.png'" alt="">
+                </div> -->
+                <!-- <div class="downshowbtn">
+                    浏览量<img src="./img/up.png" alt="">
+                </div> -->
+                <div class="downshowtext">
+                    为您找到<label>{{total}}</label>个项目
+                </div>
+                <div class="serbtn">
+                    <input v-model='shoptext' type="text" placeholder="请输入需要搜索的内容">
+                    <img @click='getshopdata()' src="./img/searchbtn.png">
+                </div>
+            </div>
+        </div>
+        <!-- 案例列表 -->
+        <div class="productlist">
+            <ul class="productlistbox">
+                <li v-for="item in shoplist" @click='gotdetails(item.cid)'>
+                    <img :src="item.cover">
+                    <div class="shoptext">
+                        <img :src="item.cover">
+                        <div class="shoptexttwo">
+                            <div>{{item.name}}</div>
+                            <div class="textmargin">{{item.labelName}}</div>
+                        </div>
+                    </div>
+                    <div class="shopline"></div>
+                    <div class="shopnumbottom">
+                        <div class="shopbottomleft">
+                            <img src="./img/watch.png"><label>666</label>
+                        </div>
+                        <div class="shopbottomright">
+                            13万
+                        </div>
+                    </div>
+                </li>
+                     
+            </ul>
+            <ul class="pagenum">
+                <li @click='downpage()'><img src="./img/up.png"></li>
+                <li>{{page}}</li>
+                <li @click='uppage()'><img src="./img/down.png"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="navigationbottom">
+        <div class="navigationbox">
+            <div class="navigationcontent">
+                <div class="bottomlogos">
+                    <img  src="./img/bottomlogo.png">
+                    <label>湛程</label>
+                </div>
+                <div class="bottomline"></div>
+                <ul class="bottomulone">
+                    <li class="bottomultitle">资讯栏目</li>
+                    <li>APP开发费用</li>
+                    <li>商城APP开发</li>
+                    <li>小程序开发</li>
+                    <li>新零售解决方案</li>
+                </ul>
+                <ul class="bottomultwo">
+                    <li class="bottomultitle">湛程</li>
+                    <li>APP开发</li>
+                    <li>渠道代理</li>
+                    <li>案例</li>
+                    <li>新闻中心</li>
+                </ul>
+                <ul class="bottomulthree">
+                    <li class="bottomultitle">公司</li>
+                    <li>关于我们</li>
+                    <li>使用协议</li>
+                </ul>
+                <ul class="bottomulfour">
+                    <li class="bottomultitle">咨询电话</li>
+                    <li class="bottomulgreen">400-992-5090</li>
+                    <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                </ul>
+                <div class="bottomrightlogo">
+                    <label>湛程公众号</label>
+                    <img  src="./img/erweima.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script src="./js/case.js"></script>
+</html>

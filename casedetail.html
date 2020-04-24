@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/casedetail.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/allajax.js"></script>
+    <title>案例界面</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+            <nav class="navbarcss">
+                <ul>
+                    <li><a href="./index.html">首页</a></li>
+                    <li class="navcheck"><a href="./case.html">案例</a></li>
+                    <li><a href="./prodect.html">产品</a></li>
+                    <li><a href="./channelagent.html">渠道代理</a></li>
+                    <li><a href="./news.html">新闻资讯</a></li>
+                    <li><a href="./aboutus.html">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="casetopbox">
+            <div class="casetopcontent">
+                <div class="nowadress">当前位置：<a href="./index.html">首页</a>>装修案例>案例详情</div>
+                <div class="casedetail">
+                    <img class="caseimg" :src="casedata.cover">
+                    <div class="casedetailright">
+                        <h1>{{casedata.name}}</h1>
+                        <!-- <div class="casetypename"  v-for="item in casedata.caseAttrs">{{item.attrName}}：{{item.attrValue}}</div> -->
+                        <div class="caseprice">价格：<label>￥{{casedata.price}}</label></div>
+                        <div class="caseteam">
+                            <div class="caseteamleft">创作团队：YouGo</div>
+                            <div class="caseteamright"><img src="./img/look.png">{{casedata.likeNum}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="casecenterbox">
+            <div class="casecenterleft">
+                <div class="casecenterlefttop">
+                    <div class="caseparam">产品参数</div>
+                    <div class="casecenterlefttopleft">
+                        <div class="typebox"  v-for="item in casedata.caseAttrs"><label>{{item.attrName}}：</label><div class="typetext">{{item.attrValue}}</div></div>
+                    </div>
+                </div>
+                <div class="casecenterleftbottom">
+                    <div class="casepicdetail">
+                        图文详情
+                    </div>
+                    <div class="casepccontent">
+                            {{casedata.content}}
+                    </div>
+                </div>
+            </div>
+            <div class="casecenterright">
+                <div class="caseremmondbox">
+                    <div class="remmondtitle"><img src="./img/fire.png"><label>推荐案例</label></div>
+                    <ul class="caseremmondlist">
+                        <li class="caseli" v-for="item in caselist">
+                            <img class="caseremmondimg" :src="item.case.cover">
+                            <div class="caselicontent">
+                                <div class="caselicontentone">{{item.case.name}}</div>
+                                <div class="caselicontenttime">
+                                    <img class="timeimg" src="./img/time.png">
+                                    <div class="timetext"><label>60</label>天</div>
+                                </div>
+                                <div class="caseliname">{{item.case.content}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navigationbottom">
+            <div class="navigationbox">
+                <div class="navigationcontent">
+                    <div class="bottomlogos">
+                        <img  src="./img/bottomlogo.png">
+                        <label>湛程</label>
+                    </div>
+                    <div class="bottomline"></div>
+                    <ul class="bottomulone">
+                        <li class="bottomultitle">资讯栏目</li>
+                        <li>APP开发费用</li>
+                        <li>商城APP开发</li>
+                        <li>小程序开发</li>
+                        <li>新零售解决方案</li>
+                    </ul>
+                    <ul class="bottomultwo">
+                        <li class="bottomultitle">湛程</li>
+                        <li>APP开发</li>
+                        <li>渠道代理</li>
+                        <li>案例</li>
+                        <li>新闻中心</li>
+                    </ul>
+                    <ul class="bottomulthree">
+                        <li class="bottomultitle">公司</li>
+                        <li>关于我们</li>
+                        <li>使用协议</li>
+                    </ul>
+                    <ul class="bottomulfour">
+                        <li class="bottomultitle">咨询电话</li>
+                        <li class="bottomulgreen">400-992-5090</li>
+                        <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                    </ul>
+                    <div class="bottomrightlogo">
+                        <label>湛程公众号</label>
+                        <img  src="./img/erweima.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //接收URL中的参数booksId
+    var cid = getUrlParam('cid');
+    console.log('cid:' + cid);
+    var app = new Vue({
+        el:'#app',
+        data:{
+            casedata:{},
+            caselist:[
+            ]
+        },
+        methods: {
+            findData:function(){
+                var that = app;
+                $.ajax({
+                    url:Url+'/case/info',
+                    type:'get',
+                    dataType:'json',
+                    data:{
+                        cid:cid
+                    },
+                    success:function(data){
+                        that.casedata=data.data
+                        _ajax({
+                                url : "/case",  // url---->地址
+                                type : "GET",   // type ---> 请求方式
+                                async : true,   // async----> 同步：false，异步：true 
+                                data : {        //传入信息
+                                    bid:data.data.tid,
+                                    word:'',
+                                    page:1
+                                },
+                                success : function(res){  
+                                    let datas =JSON.parse(res)
+                                    if(datas.status==0){
+                                        let caselistdata =[]
+                                        for(let i=0;i<datas.data.length;i++){
+                                            caselistdata.push(datas.data[i])
+                                        }
+                                        app.caselist=caselistdata
+                                    }
+                                }
+                            })
+                    }
+                })
+            }
+        },
+    })
+    app.findData();
+</script>
+</html>

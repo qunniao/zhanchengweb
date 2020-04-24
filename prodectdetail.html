@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/productdetail.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/allajax.js"></script>
+    <title>产品详情</title>
+</head>
+<body>
+    <header>
+        <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+        <nav class="navbarcss">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./case.html">案例</a></li>
+                <li  class="navcheck"><a href="./prodect.html">产品</a></li>
+                <li><a href="./channelagent.html">渠道代理</a></li>
+                <li><a href="./news.html">新闻资讯</a></li>
+                <li><a href="./aboutus.html">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="app">
+        <div class="casetopbox">
+            <div class="casetopcontent">
+                <div class="nowadress">当前位置：首页>产品详情</div>
+                <div class="casedetail">
+                    <img class="caseimg" :src="cover">
+                    <div class="casedetailright">
+                        <h1>{{shopdata.productName}}</h1>
+                        <div class="fxproduct"><img src="./img/time.png"><label>分享</label></div>
+                        <!-- <div class="casetypename">类目：金融</div>
+                        <div class="prodductworktime">开发工期：60个工作日</div> -->
+                        <div class="caseprice"><label>￥{{shopdata.price}}{{shopdata.priceUnit}}</label><div class="casepricetext">￥{{shopdata.marketPrice}}{{shopdata.priceUnit}}</div></div>
+                        <div class="caseteam">
+                            <div class="buynow">立即购买</div><div class="callus">联系我们</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="casecenterbox">
+            <div class="casecenterleft">
+                <div class="casecenterlefttop">
+                    <div class="caseparam">产品参数</div>
+                    <div class="casecenterlefttopleft">
+                        <div v-for='item in param' class="typebox"><label>{{item.name}}：</label><div class="typetext">{{item.values}}</div></div>
+                        <!-- <div class="typebox"><label>开发工期：</label><div class="typetext">60工作日</div></div>
+                        <div class="typebox"><label>服务内容：</label><div class="typetext">安卓App一套、苹果App一套、PC后台管理系统一套、界面原型图一套、界面设计图一套</div></div> -->
+                    </div>
+                </div>
+                <div class="casecenterleftbottom">
+                    <div class="casepicdetail">
+                        图文详情
+                    </div>
+                    <div class="casepccontent">
+                        {{content}}
+                    </div>
+                </div>
+            </div>
+            <div class="casecenterright">
+                <div class="caseremmondbox">
+                    <div class="remmondtitle"><img src="./img/fire.png"><label>推荐产品</label></div>
+                    <ul class="caseremmondlist">
+                        <li class="caseli" v-for='item in shoplist'>
+                            <img class="caseremmondimg" :src="item.url">
+                            <div class="caselicontent">
+                                <div class="caselicontentone">{{item.product_name}}</div>
+                                <div class="caselicontenttime">
+                                    <img class="timeimg" src="./img/time.png">
+                                    <div class="timetext"><label>60</label>天</div>
+                                </div>
+                                <div class="caseliname">{{item.product_intro}}</div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navigationbottom">
+        <div class="navigationbox">
+            <div class="navigationcontent">
+                <div class="bottomlogos">
+                    <img  src="./img/bottomlogo.png">
+                    <label>湛程</label>
+                </div>
+                <div class="bottomline"></div>
+                <ul class="bottomulone">
+                    <li class="bottomultitle">资讯栏目</li>
+                    <li>APP开发费用</li>
+                    <li>商城APP开发</li>
+                    <li>小程序开发</li>
+                    <li>新零售解决方案</li>
+                </ul>
+                <ul class="bottomultwo">
+                    <li class="bottomultitle">湛程</li>
+                    <li>APP开发</li>
+                    <li>渠道代理</li>
+                    <li>案例</li>
+                    <li>新闻中心</li>
+                </ul>
+                <ul class="bottomulthree">
+                    <li class="bottomultitle">公司</li>
+                    <li>关于我们</li>
+                    <li>使用协议</li>
+                </ul>
+                <ul class="bottomulfour">
+                    <li class="bottomultitle">咨询电话</li>
+                    <li class="bottomulgreen">400-992-5090</li>
+                    <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                </ul>
+                <div class="bottomrightlogo">
+                    <label>湛程公众号</label>
+                    <img  src="./img/erweima.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+    
+        //接收URL中的参数booksId
+        var pid = getUrlParam('pid');
+        var app = new Vue({
+            el:'#app',
+            data:{
+                cover:'',
+                name:'',
+                price:'',
+                content:'',
+                fuwu:[],
+                param:[],
+                shopdata:{},
+                shoplist:[
+                ]
+            },
+            methods: {
+                findData:function(){
+                    var that = app;
+                    $.ajax({
+                        url:Url+'product/getParam/'+pid,
+                        type:'get',
+                        dataType:'json',
+                        data:{
+                        },
+                        success:function(data){
+                            console.log(data)
+                            that.param=data.data
+                            $.ajax({
+                                url:Url+'product/getSku/'+pid,
+                                type:'get',
+                                dataType:'json',
+                                data:{
+                                },
+                                success:function(res){
+                                    console.log(data)
+                                    // console.log(that.param)
+                                    for(let i=0;i<res.data.productGuigeNameList.length;i++){
+                                        let addparam={
+                                            name:res.data.productGuigeNameList[i].gName,
+                                            values:''
+                                        }
+                                        for(let j=0;j<res.data.productGuigeNameList[i].productGuigeValueList.length;j++){
+                                            if(j==0){
+                                                addparam.values=''+res.data.productGuigeNameList[i].productGuigeValueList[j].gValue
+                                            }else{
+                                                addparam.values+=','+res.data.productGuigeNameList[i].productGuigeValueList[j].gValue
+                                            }
+                                        }
+                                        that.param.push(addparam)
+                                    }
+                                }
+                            })
+                        }
+                    })
+                    $.ajax({
+                        url:Url+'product/productInfo',
+                        type:'get',
+                        dataType:'json',
+                        data:{
+                            pid:pid
+                        },
+                        success:function(data){
+                            console.log(data)
+                            that.cover = data.data.images[0].url
+                            that.name = data.data.name
+                            that.price = data.data.price
+                            that.content = data.data.detail[0].content
+                            that.fuwu = data.data.caseAttrs
+                            that.shopdata=data.data.product
+                            _ajax({
+                                url : "/product/productList",  // url---->地址
+                                type : "GET",   // type ---> 请求方式
+                                async : true,   // async----> 同步：false，异步：true 
+                                data : {        //传入信息
+                                    pid:data.data.product.ptId,
+                                    desc:'desc',
+                                    page:1
+                                },
+                                success : function(res){  
+                                    let datastwo =JSON.parse(res)
+                                    console.log(datastwo)
+                                    if(datastwo.status==0){
+                                        let shoplistdata =[]
+                                        for(let i=0;i<datastwo.data.length;i++){
+                                            shoplistdata.push(datastwo.data[i])
+                                        }
+                                        that.shoplist=shoplistdata
+                                    }
+                                }
+                            })
+                        }
+                    })
+                }
+            },
+        })
+        app.findData();
+</script>
+</body>
+</html>

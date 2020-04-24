@@ -1,0 +1,407 @@
+body{
+    min-width:1260px;
+    background: #fff;
+}
+/* 顶部 */
+header{
+    width: 100%;
+    min-width:1260px;
+    height: 25.85rem;
+    position: relative;
+    background:url(../img/aboutus/aboutbanner.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.navbarcss{
+    position: absolute;
+    z-index: 20;
+    top: 1.35rem;
+    right: 0%;
+}
+.navcheck{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul{
+    overflow: hidden;
+    min-width: 20.6rem;
+}
+.navbarcss>ul>li{
+    float: left;
+    margin-right: 2.55rem;
+    color: #3B81FA;
+    font-size: 0.75rem;
+}
+.navbarcss>ul>li:hover{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul>li>a{
+    color: #3B81FA;
+}
+.navbarcss>ul>li:nth-child(6){
+    margin-right: 2.15rem;
+}
+.indexhader{
+    z-index: 20;
+    position: absolute;
+    top: 1rem;
+    left: 1.55rem;
+    font-size:1.1rem;
+    color: #fff;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+.indexhader>img{
+    float: left;
+    width: 1.2rem;
+    margin-top: 0.1rem;
+    margin-right: 0.45rem;
+    height: 1.35rem;
+}
+.indexhader>label{
+    float: left;
+}
+.companyjs{
+    position: absolute;
+    left: 2.35rem;
+    top: 9rem;
+}
+.companyjs>h1{
+    font-size: 1.1rem;
+    font-weight: 600
+}
+.conpanytextone{
+    width: 17.1rem;
+    margin-top: 2rem;
+    font-size: 0.425rem;
+    line-height: 0.85rem;
+    word-wrap: break-word;
+}
+.conpanytexttwo{
+    width: 17.1rem;
+    margin-top: 2.2rem;
+    font-size: 0.425rem;
+    line-height: 0.85rem;
+    word-wrap: break-word;
+}
+/* 发展历史 */
+.developmenthistory{
+    overflow: hidden;
+    margin-top: 4.8rem;
+}
+.developmenthistory>h2{
+    font-size: 1.15rem;
+    text-align: center;
+    color: #3B3FF9;
+    font-weight: 500;
+}
+.developmentbox{
+    width: 46.4rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.developmentbox>img{
+    float: left;
+    width: 20.85rem;
+    height: 13.9rem;
+}
+.developtext{
+    float: left;
+    padding-top: 0.8rem;
+    overflow: hidden;
+    width: 18.5rem;
+    margin-left: 0.45rem;
+}
+.developtext>li{
+    float: left;
+    font-size: 0.55rem;
+    color: #666666;
+    margin-bottom: 0.8rem;
+}
+.developtext>li>label{
+    font-size: 0.7rem;
+    color: #3B3FF9;
+    width: 4rem;
+    display: inline-block;
+}
+.developtext>li>label:nth-child(1){
+    margin-right: 0.75rem
+}
+.developtext>li>label:nth-child(5){
+    margin-right: 0.75rem
+}
+.developtext>li>label:nth-child(8){
+    margin-right: 0.75rem
+}
+/* 我们的团队 */
+.ourteam{
+    margin-top: 7.8rem;
+    overflow: hidden;
+    margin-left:2.4rem; 
+}
+.ourteamleft{
+    float: left;
+    width: 19.9rem;
+}
+.ourteamleft>h3{
+    font-size: 0.825rem;
+    margin-bottom: 1.45rem;
+}
+.ourteamright{
+    float: left;
+    margin-left: 1rem;
+    width: 24.1rem;
+    height: 15.8rem;
+}
+.ourteamtext{
+    margin-bottom: 1.35rem;
+    font-size: 0.5rem;
+    line-height: 0.85rem;
+}
+.nomargin{
+    margin-bottom: 0;
+}
+/* 办公环境 */
+.workadress{
+    width: 35.15rem;
+    margin: 0 auto;
+    margin-top: 5.45rem;
+}
+.woradressheader{
+    text-align: center;
+    height: 4.125rem;
+    width: 11.7rem;
+    /* background: red; */
+    margin: 0 auto;
+    position: relative;
+}
+.woradressheader>img{
+    position: absolute;
+    z-index: -1;
+    left: 1.35rem;
+    width: 3.825rem;
+    height: 4.05rem;
+}
+.woradressheader>h3{
+    margin-bottom: 1.2rem;
+    margin-top: 0.85rem;
+    font-size: 1.15rem;
+    font-weight: 540;
+    color: #3B3FF9;
+}
+.woradressheader>div{
+    font-size: 0.65rem;
+    color: #3B3FF9;
+}
+.workadressul{
+    margin-top: 1.8rem;
+    overflow: hidden;
+}
+.workadressul>li{
+    float: left;
+    width: 11.625rem;
+    height: 11rem;
+    margin-left: 0.125rem;
+    margin-bottom: 0.125rem;
+}
+.workadressul>li:nth-child(3n+1){
+    margin-left: 0
+}
+.workadressul>li>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2rem;
+}
+/* 团队活动 */
+.teamactive{
+    width: 35.05rem;
+    margin: 0 auto;
+    margin-top: 3.15rem;
+}
+.teamactivelist{
+    overflow: hidden;
+}
+.teamactivelist>li{
+    float: left;
+}
+.activeone{
+    margin-right: 0.25rem;
+    width: 9.25rem;
+    height: 8.6rem;
+    background: #F3F3F4;
+}
+.activeone>h3{
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333333;
+}
+.activeone>div{
+    font-size: 0.85rem;
+    margin-top: 1.15rem;
+    text-align: center;
+    color: #434343;
+}
+.activetwo{
+    width: 14.9rem; 
+    height: 8.6rem;
+}
+.activetwo>img{
+    width: 100%;
+    height: 100%;
+}
+.activethree{
+    margin-left: 0.3rem;
+    width: 10.35rem; 
+    height: 8.6rem;
+}
+.activethree>img{
+    width: 100%;
+    height: 100%;
+}
+.activefour{
+    margin-top: 0.4rem;
+    margin-right: 0.37rem;
+    width: 15.05rem; 
+    height: 14.2rem;
+}
+.activefour>img{
+    width: 100%;
+    height: 100%;
+}
+.activefive{
+    margin-top: 0.4rem;
+    width: 19.625rem; 
+    height: 14.2rem;
+}
+.activefive>img{
+    width: 100%;
+    height: 100%;
+}
+/* 联系我们 */
+.callus{
+    width: 100%;
+    height: 16.1rem;
+    position: relative;
+    margin:3.15rem auto;
+    background:url(../img/aboutus/aboutpic4.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.calluscontent{
+    position: absolute;
+    left: 2.7rem;
+    top: 1.9rem;
+    width: 18.95rem;
+    height: 12.275rem;
+}
+.calluscontent>h3{
+    /* text-align: center; */
+    font-size: 0.85rem;
+    color: #fff;
+}
+.linebox{
+    position: relative;
+    width: 10.55rem;
+    margin-left: 2.8rem;
+    margin-top: 1.2rem;
+    /* margin: 0 auto; */
+}
+.newenglishtext{
+    margin: 0 auto;
+    width: 18rem;
+    font-size: 0.8rem;
+    color: #fff;
+}
+.newsline{
+    color:#F0F0F0;
+    width: 3rem;
+    font-size: 0.1rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    overflow: hidden;
+}
+.newslinetwo{
+    color:#F0F0F0;
+    font-size: 0.1rem;
+    width: 3rem;
+    margin-left: 0.5rem;
+    display: inline-block;
+    overflow: hidden;
+}
+.subtitle {
+    position: relative;
+    font-size: 0.8rem;
+    color: #fff;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    text-align: center;
+  }
+  .subtitle:before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 0.025rem;
+    top: 50%;
+    background-color: #ededed;
+    left: 2%;
+  }
+  .subtitle:after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 0.025rem;
+    top: 50%;
+    background-color: #ededed;
+    right: 2%;
+  }
+.adresstext{
+    margin-left: 2.6rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    margin-top: 0.9rem;
+    font-size: 0.7rem;
+}
+.adresslabel{
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+    margin-left: 2.6rem;
+}
+.adresslabel>img{
+    float: left;
+}
+.adresslabel>label{
+    float: left;
+    font-size: 0.55rem;
+    color: #fff;
+    margin-left: 0.25rem;
+}
+.wximg{
+    margin-top: 0.1rem;
+    width: 0.65rem;
+    height: 0.65rem;
+}
+.qqimg{
+    margin-top: 0.1rem;
+    width: 0.65rem;
+    height: 0.65rem;
+}
+.phoneimg{
+    margin-top: 0.1rem;
+    width: 0.65rem;
+    height: 0.65rem;
+}
+.adressimg{
+    width: 0.725rem;
+    height: 0.8rem;
+}
+.adresslabel>label.adresslabels{
+    width: 8.25rem;
+    margin-left: 0;
+}
+.dztext{
+    float: left;
+    font-size: 0.55rem;
+    color: #fff;
+    display: inline-block;
+    margin-left: 0.25rem;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/news.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="./js/allajax.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <title>新闻列表界面</title>
+</head>
+<body>
+    <header>
+        <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+        <nav class="navbarcss">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./case.html">案例</a></li>
+                <li><a href="./prodect.html">产品</a></li>
+                <li><a href="./channelagent.html">渠道代理</a></li>
+                <li  class="navcheck"><a href="./news.html">新闻资讯</a></li>
+                <li><a href="./aboutus.html">关于我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="newscontent" id="app">
+        <div class="newsleftlist">
+            <div class="newdetail" v-for="item in news">
+                <a v-bind:href="'./newsdetail.html?id='+item.id">
+                    <img class="newscover" :src="item.cover">
+                    <div class="nessdetailcontent">
+                        <div class="newsheader"><div class="newslabelbox"></div>{{item.title}}</div>
+                        <div class="newscontenttext">{{item.content}}</div>
+                        <div class="newscontentbtn">
+                            <img class="newstime" src="./img/time.png">
+                            5天前
+                            <img class="newswatch" src="./img/watch.png">
+                            {{item.watchNum}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="pagenumbox">
+                <ul class="pagenum">
+                    <li @click='downpage()'><img src="./img/up.png"></li>
+                    <li>{{page}}</li>
+                    <li @click='uppage()'><img src="./img/down.png"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="newsrightlist">
+            <div class="newsrighttop">
+                <div class="newsrighttopcontent">
+                    <div class="nearnews">近期文章</div>
+                    <div v-for="item in news" class="nearnewscontent">
+                        <a v-bind:href="'./newsdetail.html?id='+item.id">{{item.title}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="newsrightbottom">
+                <div class="newsrighttopcontent">
+                    <div class="nearnews">分类目录</div>
+                    <div class="newtypebox">
+                        <ul class="newstypelist">
+                            <li v-for="item in newsTypes">{{item.name}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navigationbottom">
+        <div class="navigationbox">
+            <div class="navigationcontent">
+                <div class="bottomlogos">
+                    <img  src="./img/bottomlogo.png">
+                    <label>湛程</label>
+                </div>
+                <div class="bottomline"></div>
+                <ul class="bottomulone">
+                    <li class="bottomultitle">资讯栏目</li>
+                    <li>APP开发费用</li>
+                    <li>商城APP开发</li>
+                    <li>小程序开发</li>
+                    <li>新零售解决方案</li>
+                </ul>
+                <ul class="bottomultwo">
+                    <li class="bottomultitle">湛程</li>
+                    <li>APP开发</li>
+                    <li>渠道代理</li>
+                    <li>案例</li>
+                    <li>新闻中心</li>
+                </ul>
+                <ul class="bottomulthree">
+                    <li class="bottomultitle">公司</li>
+                    <li>关于我们</li>
+                    <li>使用协议</li>
+                </ul>
+                <ul class="bottomulfour">
+                    <li class="bottomultitle">咨询电话</li>
+                    <li class="bottomulgreen">400-992-5090</li>
+                    <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                </ul>
+                <div class="bottomrightlogo">
+                    <label>湛程公众号</label>
+                    <img  src="./img/erweima.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data: {
+            news:[],
+            newsTypes:[],
+            page:1,
+            total:0
+        },
+        methods: {
+            findData:function(){
+                var that = app;
+                //获取新闻列表
+                $.ajax({
+                    url:Url+'news/list',
+                    type:'get',
+                    dataType:'json',
+                    data:{
+                        current:app.page,
+                        size:6
+                    },
+                    success:function(data){
+                        that.news = data.data.records
+                        that.total=data.data.total
+                    }
+                })
+                //获取新闻类目
+                $.ajax({
+                    url:Url+'newsTypes/list',
+                    type:'get',
+                    dataType:'json',
+                    data:{
+                        current:1,
+                        size:10
+                    },
+                    success:function(data){
+                        that.newsTypes = data.data.records
+                    }
+                })
+            },downpage(){
+            if(app.page==1){
+                alert('当前是第一页，没有上一页')
+            }else{
+                app.page-=1
+                $.ajax({
+                    url:Url+'news/list',
+                    type:'get',
+                    dataType:'json',
+                    data:{
+                        current:app.page,
+                        size:6
+                    },
+                    success:function(data){
+                        that.news = data.data.records
+                        that.total=data.data.total
+                    }
+                })
+            }
+        },uppage(){
+            if(app.page*8>app.total){
+                alert('已经是最后一页,没有下一页')
+            }else{
+                $.ajax({
+                    url:Url+'news/list',
+                    type:'get',
+                    dataType:'json',
+                    data:{
+                        current:app.page,
+                        size:6
+                    },
+                    success:function(data){
+                        that.news = data.data.records
+                        that.total=data.data.total
+                    }
+                })
+            }
+        }
+        },
+    });
+    app.findData();
+</script>
+</html>

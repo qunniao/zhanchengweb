@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/commodity.css"/>
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/method.js" type="text/javascript" charset="utf-8"></script>
+		<title>商品分类</title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="shangmiande">
+				<div class="search">
+					<input type="text" placeholder="搜索商品名称"/>
+					<img src="imgs/search.png"/>
+				</div>
+				<div class="classification">
+					<div class="classificationItem active">
+						<span class="classificationItemTitle">默认</span>
+					</div>
+					<div class="classificationItem">
+						<span class="classificationItemTitle">全部</span>
+					</div>
+				</div>
+			</div>
+			<div class="product">
+				<div class="productLeft">
+					<div class="productLeftItem acv">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="productLeftItemTitle">测试</span>
+					</div>
+					<div class="productLeftItem">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="productLeftItemTitle">测试</span>
+					</div>
+					<div class="productLeftItem">
+						<img src="imgs/borderlands_tiny_tina.jpg"/>
+						<span class="productLeftItemTitle">测试</span>
+					</div>
+					<div class="productLeftItem">
+						<span class="productLeftItemTitle">测试</span>
+					</div>
+				</div>
+				<div class="productRight">
+					<div class="productRightItem" v-for="item in products">
+						<a v-bind:href="'details.html?pid='+item.pid">
+							<img :src="item.cover?item.cover:'imgs/children_game_concept01.jpg'"/>
+							<div class="productRightItemRight">
+								<span class="name">{{item.productName}}</span>
+								<div class="kucun_xiaoliang">
+									<span class="kucun">库存：{{item.availableStock}}</span>
+									<span class="xiaoliang">销量：{{item.sales}}</span>
+								</div>
+								<span class="miaosha">秒杀</span>
+								<span class="price">￥{{item.price}}</span>
+							</div>
+						</a>
+					</div>
+					<div class="dibu"></div>
+				</div>
+			</div>
+			<div class="bottom">
+				<a href="retailShoppingCart.html" class="goshopcart">
+					<img src="imgs/borderlands_tiny_tina.jpg"/>
+				</a>
+				<div class="heji">
+					<span class="heijia">合计：<b>￥0.00</b></span>
+					<span class="yunfei">0件商品，不包含运费</span>
+				</div>
+				<a href="" class="settlement">立即结算</a>
+			</div>			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	let filter = document.getElementsByClassName("classificationItem")
+	for(let i=0;i<filter.length;i++){
+		filter[i].addEventListener('click',function(){
+			filter[i].classList.add('active')
+			for(let j=0;j<filter.length;j++){
+				if(i!=j){
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+	
+	let filtera = document.getElementsByClassName("productLeftItem")
+	for(let i=0;i<filtera.length;i++){
+		filtera[i].addEventListener('click',function(){
+			filtera[i].classList.add('acv')
+			for(let j=0;j<filtera.length;j++){
+				if(i!=j){
+					filtera[j].classList.remove('acv')
+				}
+			}
+		})
+	}
+	
+	var serverHost = getServerHost();
+	
+	var app = new Vue({
+		el:'#app',
+		data:{
+			products:[]
+		},
+		methods:{
+			findData:function(){
+				var that = this;
+				//获取商品列表
+				$.ajax({
+					url:serverHost + '/products/list',
+					type:'get',
+					dataType:'json',
+					data:{
+						
+					},
+					success:function(data){
+						that.products = data.data
+						console.log(that.products)
+					}
+				})
+			}
+		}
+	})
+	app.findData();
+</script>

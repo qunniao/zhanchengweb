@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        window.addEventListener(('orientationchange' in window ? 'orientationchange' : 'resize'), (function() {
+              function c() {
+              var d = document.documentElement;
+              let clientWidths =d.clientWidth
+              if(clientWidths<1260){
+                  clientWidths=1260
+              }
+              var cw = clientWidths || 1920;
+              d.style.fontSize = (20 * (cw / 960)) > 40 ? 40 + 'px' : (20 * (cw / 960)) + 'px';
+              }
+              c();
+          return c;
+      })(), false);
+      // $($('.contentli').width($('.contentli').innerWidth()))
+  </script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="./js/allajax.js"></script>
+    <title>首页</title>
+</head>
+<body>
+    <header>
+        <nav class="indexhader"><img src="./img/companylogo.png"><label>湛程</label></nav>
+        <nav class="navbarcss">
+            <ul>
+                <li class="navcheck"><a href="./index.html">首页</a></li>
+                <li><a href="./case.html">案例</a></li>
+                <li><a href="./prodect.html">产品</a></li>
+                <li><a href="./channelagent.html">渠道代理</a></li>
+                <li><a href="./news.html">新闻资讯</a></li>
+                <li><a href="./aboutus.html">关于我们</a></li>
+            </ul>
+        </nav>
+        <div class="contenttext">
+            <div>特殊的方式</div>
+            <div>实现你的业务</div>
+            <title>你会建立自己的网站吗？与我们分享你的想法或使用它由你自己与我们的项目制造者软件，团队协作，增加你的创造力。</title>
+        </div>
+    </header>
+    <!-- 顶部四个分类 -->
+    <div class=" indexcontent">
+        <ul>
+            <li class='contentli'>
+                <div class="contentlibox">
+                    <img src="./img/index/indexpic1.png">
+                    <div>APP开发</div>
+                    <title>电商、医疗、社交、金融、服务、短视频、直播平台、棋牌游戏、定制开发...</title>
+                    <div class="contentlibtn"><div>查看案例</div><div>了解详情</div></div>
+                </div>        
+            </li>
+            <li class='contentli'>
+                <div class="contentlibox">
+                    <img src="./img/index/indexpic2.png">
+                    <div>小程序开发</div>
+                    <title>微信小程序、百度小程序、支付宝小程序、微商城、点餐、外卖、到店、平台、服务、旅游、健身、模板开发、定制开发...</title>
+                    <div class="contentlibtn"><div>查看案例</div><div>了解详情</div></div>
+                </div>        
+            </li>
+            <li class='contentli'>
+                <div class="contentlibox">
+                    <img src="./img/index/indexpic3.png">
+                    <div>PC网站/H5网页</div>
+                    <title>企业官网、金融、电商、短视频、医疗、平台服务、模板网站、定制开发...</title>
+                    <div class="contentlibtn"><div>查看案例</div><div>了解详情</div></div>
+                </div>        
+            </li>
+            <li class='contentli'>
+                <div class="contentlibox">
+                    <img src="./img/index/indexpic4.png">
+                    <div>其他业务</div>
+                    <title>图文设计、系统运维托管、二次开发、代码维护、模板开发定制开发</title>
+                    <div class="contentlibtn"><div>查看案例</div><div>了解详情</div></div>
+                </div>        
+            </li>
+        </ul>
+    </div>
+    <!-- 分割栏 -->
+    <div class="indebannertwo">
+        <img src="./img/index/indebanner1.gif">
+    </div>
+    <!-- 主体内容2 -->
+    <div class="indexcontenttwo">
+        <div class="contenttwoheader">
+            <img src="./img/index/shoplogo1.png">
+            <div class="shopdetail">
+                <label>软件商城</label>
+                <label class="shopdetailsmall">software mali</label>
+            </div>
+            <div class="shopdetailtwo">
+                精选业内前沿和热门IT产品
+            </div>
+        </div>
+        <!-- 软件商城 -->
+        <ul class="softwarebox" id="shopmall">
+        </ul>
+        <!-- 第二banner -->
+        <div class="indexsmall">
+            <img src="./img/index/indexbanner2.gif">
+        </div>
+        <!-- 案例部分1 -->
+        <div class="caseheaderone">
+                <img src="./img/caseone.png">
+                <div class="casedetail">
+                    <label>APP案例</label>
+                    <label class="casedetailsmall">APP case</label>
+                </div>
+        </div>
+        <!-- app案例 -->
+        <ul class="caseshopbox" id="appcaselist">
+            <!-- <li>
+                <img src="./img/shopcs.jpeg">
+                <div class="casecontent">
+                    <img src="./img/companylogo.png">
+                    <div class="casecontetntext">
+                        <div>华修师傅端</div>
+                        <div>服务类APP</div>
+                    </div>
+                </div>
+                <div class="casetybtn">
+                     扫码体验
+                </div>
+            </li> -->
+        </ul>
+        <!-- 微信小程序案例 -->
+        <div class="caseheaderone">
+                <img class="wxpic" src="./img/casewx.png">
+                <div class="casedetail">
+                    <label>微信小程序案例</label>
+                    <label class="casedetailsmall">applet of WeChat</label>
+                </div>
+        </div>
+        <ul class="caseshopbox" id="wxcaselist">
+        </ul>
+        <!-- PC/H5网站案例 -->
+        <div class="caseheaderone" >
+                <img class="wxpic" src="./img/casepc.png">
+                <div class="casedetail">
+                    <label>PC/H5网站案例</label>
+                    <label class="casedetailsmall">website design</label>
+                </div>
+        </div>
+        <ul class="caseshopbox" id="pccaselist">
+        </ul>
+    </div>
+    <!-- 分隔栏 -->
+    <div class="indebannerthree">
+        <img src="./img/index/indexbanner3.gif">
+    </div>
+    <!-- 新闻资讯 -->
+    <div class="newstitle">新闻资讯</div>
+    <div class="newenglishtext"><div class="newsline">—————————————————————</div>NEWS<div class="newslinetwo">—————————————————————</div></div>
+    <div class="newcenter">
+        <img >
+        <div class="newsright">
+            <ul id="newtypedata" class="newstitleul">
+                <!-- <li>最新资讯</li>
+                <li>APP技术资讯</li>
+                <li>APP行业动态</li>
+                <li>新闻热点</li>
+                <li>APP学堂</li>
+                <li>企业管理</li> -->
+            </ul>
+            <ul class="newstitleulleft ulleftright" id="newslists">
+                
+            </ul>
+        </div>
+    </div>
+    <div class="customizationProcess">新闻资讯</div>
+    <div class="customizationProcessenglish">FLOW PATH</div>
+    <ul class="cusprolist">
+        <li>
+            <img src="./img/index/cuspro1.png">
+            <div>梳理需求与调研</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro2.png">
+            <div>确定需求</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro3.png">
+            <div>签署合同</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro4.png">
+            <div>原型设计</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro5.png">
+            <div>IT开发</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro6.png">
+            <div>在线验收</div>
+        </li>
+        <li>
+            <img src="./img/index/cuspro7.png">
+            <div>上线运营维护</div>
+        </li>
+    </ul>
+    <!-- 联系我们 -->
+    <div class="contactusbox">
+        <div class="contactus">
+            <div class="contactusheader">联系我们</div>
+            <div class="contactcontet">
+                <div class="contactcontentleft">
+                    <input placeholder="您的姓名*">
+                    <input placeholder="您的邮件*">
+                    <input placeholder="您的电话*">
+                </div>
+                <div class="contactcontentright">
+                    <textarea placeholder="合作要求：详细产品描述、功能规划、数量、软件平台"></textarea>
+                </div>
+            </div>
+            <div class="pushbtn">提交</div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="navigationbottom">
+        <div class="navigationbox">
+            <div class="navigationcontent">
+                <div class="bottomlogos">
+                    <img  src="./img/bottomlogo.png">
+                    <label>湛程</label>
+                </div>
+                <div class="bottomline"></div>
+                <ul class="bottomulone">
+                    <li class="bottomultitle">资讯栏目</li>
+                    <li>APP开发费用</li>
+                    <li>商城APP开发</li>
+                    <li>小程序开发</li>
+                    <li>新零售解决方案</li>
+                </ul>
+                <ul class="bottomultwo">
+                    <li class="bottomultitle">湛程</li>
+                    <li>APP开发</li>
+                    <li>渠道代理</li>
+                    <li>案例</li>
+                    <li>新闻中心</li>
+                </ul>
+                <ul class="bottomulthree">
+                    <li class="bottomultitle">公司</li>
+                    <li>关于我们</li>
+                    <li>使用协议</li>
+                </ul>
+                <ul class="bottomulfour">
+                    <li class="bottomultitle">咨询电话</li>
+                    <li class="bottomulgreen">400-992-5090</li>
+                    <li>杭州市西湖区万塘路262号万塘汇南楼五楼氪空间</li>
+                </ul>
+                <div class="bottomrightlogo">
+                    <label>湛程公众号</label>
+                    <img  src="./img/erweima.png">
+                </div>
+            </div>
+        </div>
+				All rights reserved by zhancheng Group ©2019-2021 <a class="bottomultitle" style="text-align:center;font-size:15px;margin-left:400px;" href="http://www.beian.miit.gov.cn" target="_blank">浙ICP备18051651号</a>
+    </div>
+</body>
+<script src="./js/index.js">
+</script>
+</html>

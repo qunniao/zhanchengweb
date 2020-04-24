@@ -1,0 +1,277 @@
+body{
+    min-width:1260px;
+    background: #F5F7F9;
+}
+/* 顶部 */
+header{
+    width: 100%;
+    min-width:1260px;
+    height: 3.1rem;
+    position: relative;
+    background: #9ED5F8;
+    /* background:url(../img/case/casebanner.png) no-repeat;
+    background-size: 100% 100%;  */
+}
+.navbarcss{
+    position: absolute;
+    z-index: 20;
+    top: 1.35rem;
+    right: 0%;
+}
+.navcheck{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul{
+    overflow: hidden;
+    min-width: 20.6rem;
+}
+.navbarcss>ul>li{
+    float: left;
+    margin-right: 2.55rem;
+    color: #3B81FA;
+    font-size: 0.75rem;
+}
+.navbarcss>ul>li:hover{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul>li>a{
+    color: #3B81FA;
+}
+.navbarcss>ul>li:nth-child(6){
+    margin-right: 2.15rem;
+}
+.indexhader{
+    z-index: 20;
+    position: absolute;
+    top: 1rem;
+    left: 1.55rem;
+    font-size:1.1rem;
+    color: #fff;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+.indexhader>img{
+    float: left;
+    width: 1.2rem;
+    margin-top: 0.1rem;
+    margin-right: 0.45rem;
+    height: 1.35rem;
+}
+.indexhader>label{
+    float: left;
+}
+
+.casetopbox{
+    width: 100%;
+    background: #fff;
+    height:17.25rem;
+}
+.casetopcontent{
+    width: 35rem;
+    margin:0 auto;
+    padding-top: 2.25rem;
+   
+}
+.nowadress{
+    font-size: 0.55rem;
+}
+.casedetail{
+    overflow: hidden;
+    margin-top: 1.3rem;
+}
+.caseimg{
+    float: left;
+    width: 19rem;
+    height: 11.5rem;
+}
+.casedetailright{
+    width: 15rem;
+    float: left;
+    margin-left: 1rem;
+}
+.casedetailright>h1{
+    margin-bottom: 3.05rem;
+    font-size: 1.2rem;
+}
+.casetypename{
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+}
+.caseprice{
+    padding-bottom: 0.8rem;
+    border-bottom: 0.025rem dashed #CECCCC;
+    font-size: 0.7rem;
+}
+.caseprice>label{
+    color: #F30C0C
+}
+.caseteam{
+    overflow: hidden;
+    margin-top: 2.15rem;
+}
+.caseteamleft{
+    float: left;
+    font-size: 0.7rem;
+}
+.caseteamright{
+    float: right;
+    padding-right: 0.4rem;
+    font-size: 0.7rem;
+}
+.caseteamright>img{
+    width: 0.9rem;
+    margin-right: 0.5rem;
+    height: 0.55rem;
+}
+/* 案例主体部分 */
+.casecenterbox{
+    width: 34.9rem;
+    padding-top: 0.6rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.caseparam{
+    font-size: 0.6rem;
+    margin-bottom: 0.85rem;
+}
+.casecenterleft{
+    width: 23.5rem;
+    float: left;
+}
+.casecenterlefttop{
+    width: 100%;
+    padding-top: 0.6rem;
+    background: #fff;
+    padding-left: 0.6rem;
+    overflow: hidden;
+    height: 9.25rem;
+}
+.casecenterlefttopleft{
+    width: 20rem;
+    font-size: 0.5rem;
+    float: left;
+}
+.typebox{
+    float: left;
+    margin-right: 0.5rem;
+    width: 9.5rem; 
+    margin-bottom: 0.7rem;
+    overflow: hidden;
+}
+
+.typebox>label{
+    float: left;
+}
+.typetext{
+    float: left;
+    display: inline-block;
+    width: 7rem;
+}
+.casecenterlefttopright{
+    width: 9.5rem;
+    margin-left: 3.7rem;
+    font-size: 0.5rem;
+    float: left;
+}
+/* 图文信息 */
+.casecenterleftbottom{
+    width: 100%;
+    margin-top:0.35rem;
+    background: #fff; 
+}
+.casepicdetail{
+    height: 1.4rem;
+    line-height: 1.4rem;
+    padding-left: 0.5rem;
+    font-size: 0.55rem;
+    color: #666666;
+    border-bottom: 0.025rem solid #E0DEDE;
+}
+.casepccontent{
+    padding-top: 2rem;
+    width: 21.65rem;
+    font-size: 0.65rem;
+    margin: 0 auto;
+    min-height:25.5rem
+}
+/* 推荐案例 */
+.casecenterright{
+    float: left;
+    margin-left: 0.65rem;
+    background: #fff;
+    width: 10.725rem;
+    height: 36.45rem;
+}
+.caseremmondbox{
+    width: 9.7rem;
+    margin: 0 auto;
+}
+.remmondtitle{
+    overflow: hidden;
+    margin-top: 0.45rem;
+    font-size: 0.575rem;
+}
+.remmondtitle>label{
+    float: left;
+    margin-left: 0.25rem;
+}
+.remmondtitle>img{
+    float: left;
+    vertical-align:middle;
+    width: 0.6rem;
+    height: 0.7rem;
+}
+.caseremmondlist{
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+.caseremmondlist>li{
+    width: 100%;
+    height: 4.8rem;
+    border-bottom: 0.025rem solid #EBE9E9;
+    margin-bottom: 0.675rem;
+    overflow: hidden;
+}
+.caseremmondimg{
+    float: left;
+    width: 4.45rem;
+    height: 3.7rem;
+}
+.caselicontent{
+    float: left;
+    margin-left: 0.55rem;
+    width: 4.5rem;
+}
+.caselicontentone{
+    font-weight: 600;
+    font-size:0.45rem; 
+}
+.caselicontenttime{
+    margin-top: 0.6rem;
+    overflow: hidden;
+}
+.timeimg{
+    float: left;
+    width: 0.625rem;
+    height: 0.625rem;
+}
+.timetext{
+    float: left;
+    margin-left: 0.3rem;
+    font-size: 0.525rem;
+}
+.timetext>label{
+    font-size: 0.45rem;
+    color: #F42C2C;
+}
+.caseliname{
+    margin-top: 0.55rem;
+    font-size: 0.45rem;
+    color: #666666;
+    overflow: hidden;/*超出部分隐藏*/
+    text-overflow:ellipsis;/* 超出部分显示省略号 */
+    white-space: nowrap;/*规定段落中的文本不进行换行 */
+    width: 100%;
+}

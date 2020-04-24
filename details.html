@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/details.css"/>
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/method.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title>商品详情</title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="header">
+				<div class="lunbotu">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" v-for="item in imgList">
+								<div class="img">
+									<img :src="item.url" />
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<span class="price">￥<b>{{price}}</b></span>
+				<span class="title">{{product_name}}</span>
+				<div class="freight_sales_tock">
+					<span class="reight">运费: 包邮</span>
+					<span class="reight">销量: 556</span>
+					<span class="reight">库存: {{totalStock}}</span>
+				</div>
+			</div>
+			<div class="sendTo">
+				<span class="sendToTitle">送至</span>
+				<div class="sendToRight">
+					<img src="imgs/dingwei.png"/>
+					<span class="chengshi">中国 浙江省 杭州市</span>
+					<span class="youjiantou"></span>
+				</div>
+			</div>
+			<div class="person">
+				<div class="touxiang_ming">
+					<img src="imgs/borderlands_tiny_tina.jpg"/>
+					<span class="ming">郭</span>
+				</div>
+				<div class="personRight">
+					<div class="personRightItem">
+						<a href="">
+							<span class="num">4</span>
+							<span class="personRightItem_title">分类选购</span>
+						</a>
+					</div>
+					<div class="personRightItem">
+						<a href="">
+							<span class="num">27</span>
+							<span class="personRightItem_title">全部商品</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--图文详情-->
+			<div class="pictureDetails">
+				<span class="shangpina">商品详情</span>
+				<div class="content" v-html="content">
+					{{content}}
+				</div>
+			</div>
+			<div class="asd"></div>
+			<div class="bottom">
+				<div class="home">
+					<a href="">
+						<img src="imgs/home.png"/>
+						<span class="homeTitle">首页</span>
+					</a>
+				</div>
+				<div class="home">
+					<a href="shoppingCart.html">
+						<img src="imgs/home.png"/>
+						<span class="homeTitle">购物车</span>
+					</a>
+				</div>
+				<div class="addCar">
+					<a href="">加入购物车</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var serverHost = getServerHost();
+	
+	//获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //接收URL中的参数booksId
+    var pid = getUrlParam('pid');
+	
+	var app = new Vue({
+		el:'#app',
+		data:{
+			imgList:[],
+			price:'',
+			product_name:'',
+			totalStock:'',
+			content:''
+		},
+		methods:{
+			findData:function(){
+				var that = this;
+				//获取商品详情
+				$.ajax({
+					url:serverHost + '/products/info',
+					type:'get',
+					dataType:'json',
+					data:{
+						pid:pid
+					},
+					success:function(data){
+						that.imgList = data.data.productImageList,
+						that.price = data.data.price,
+						that.product_name = data.data.product_name,
+						that.totalStock = data.data.total_stock,
+						that.content = data.data.content
+					}
+				})
+			}
+		}
+	})
+	app.findData();
+</script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+		loop: true, //是否循环，false不循环
+		effect : 'cube',//切换效果，不要可删除
+		autoplay: true,
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
+		},
+		autoplay:{
+			delay:5000
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>

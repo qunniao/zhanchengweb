@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="./js/adapt.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/methods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<title>首页</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="header">
+				<img :src="cover"/>
+			</div>
+			<!--新品上市-->
+			<div class="newProduct">
+				<span class="title">新品上市</span>
+				<div class="newProductList">
+					<div class="newProductItem">
+						<a href="details.html">
+							<img src="imgs/touxiang.jpg"/>
+							<span class="name">舒缓化妆水</span>
+						</a>
+					</div>
+					<div class="newProductItem">
+						<a href="a.html">
+							<img src="imgs/touxiang.jpg"/>
+							<span class="name">舒缓化妆水</span>
+						</a>
+					</div>
+					<div class="newProductItem">
+						<a href="">
+							<img src="imgs/touxiang.jpg"/>
+							<span class="name">舒缓化妆水</span>
+						</a>
+					</div>
+				</div>
+				<!--明星产品-->
+				<div class="starProduct">
+					<span class="title">明星产品</span>
+					<div class="starProductList">
+						<div class="starProductItem">
+							<a href="">
+								<div class="starProductItem_img">
+									<img src="imgs/touxiang.jpg" />
+								</div>
+								<div class="starProductItem_right">
+									<span class="advantage">轻薄透气 贴合亲肤</span>
+									<span class="starProductItem_title">丝柔少女蜜粉</span>
+									<div class="money">
+										<span class="moneyTitle">上新价</span>
+										<span class="price">￥ 88</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="starProductItem">
+							<a href="">
+								<div class="starProductItem_img">
+									<img src="imgs/touxiang.jpg" />
+								</div>
+								<div class="starProductItem_right">
+									<span class="advantage">轻薄透气 贴合亲肤</span>
+									<span class="starProductItem_title">丝柔少女蜜粉</span>
+									<div class="money">
+										<span class="moneyTitle">上新价</span>
+										<span class="price">￥ 88</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="starProductItem">
+							<a href="">
+								<div class="starProductItem_img">
+									<img src="imgs/touxiang.jpg" />
+								</div>
+								<div class="starProductItem_right">
+									<span class="advantage">轻薄透气 贴合亲肤</span>
+									<span class="starProductItem_title">丝柔少女蜜粉</span>
+									<div class="money">
+										<span class="moneyTitle">上新价</span>
+										<span class="price">￥ 88</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--所有产品-->
+				<div class="allProduct">
+					<span class="title">明星产品</span>
+					<div class="allProductList">
+						<div class="allProductItem">
+							<a href="">
+								<img src="imgs/touxiang.jpg"/>
+								<span class="allProductItem_title">焕颜修护精华露精致滋润</span>
+								<div class="allProductItem_price">
+									<span class="allProductItem_price_title">￥</span>
+									<span class="allProductItem_money">266.00</span>
+								</div>
+							</a>
+						</div>
+						<div class="allProductItem">
+							<a href="">
+								<img src="imgs/touxiang.jpg"/>
+								<span class="allProductItem_title">焕颜修护精华露精致滋润</span>
+								<div class="allProductItem_price">
+									<span class="allProductItem_price_title">￥</span>
+									<span class="allProductItem_money">266.00</span>
+								</div>
+							</a>
+						</div>
+						<div class="allProductItem">
+							<a href="">
+								<img src="imgs/touxiang.jpg"/>
+								<span class="allProductItem_title">焕颜修护精华露精致滋润</span>
+								<div class="allProductItem_price">
+									<span class="allProductItem_price_title">￥</span>
+									<span class="allProductItem_money">266.00</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="qwe"></div>
+			</div>
+			<div class="footer">
+				<div class="agentItem">
+					<a href="">
+						<img src="./imgs/home1.png"/>
+						<span>首页</span>
+					</a>
+				</div>
+				<div class="agentItem">
+					<a href="agent.html">
+						<img src="./imgs/daili1.png"/>
+						<span>代理</span>
+					</a>
+				</div>
+				<div class="agentItem">
+					<a href="">
+						<img src="./imgs/home.png"/>
+						<span>加盟店</span>
+					</a>
+				</div>
+				<div class="agentItem">
+					<a href="retail.html">
+						<img src="./imgs/lingshou1.png"/>
+						<span>零售</span>
+					</a>
+				</div>
+				<div class="agentItem">
+					<a href="mine.html">
+						<img src="./imgs/wode1.png"/>
+						<span>我的</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--<script type="text/javascript">
+	// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+	var useragent = navigator.userAgent;
+	if(useragent.match(/WindowsWechat/) == 'WindowsWechat' || useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+		// 这里警告框会阻塞当前页面继续加载
+		//alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+		document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css">';
+		document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在微信客户端打开链接</h4></div></div>';
+
+	}
+</script>-->
+<script type="text/javascript">
+	
+	//获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //接收URL中的参数booksId
+    var code = getUrlParam('code');
+    console.log(code)
+    
+	var serverHost = getServerHost()
+    var app = new Vue({
+    	el:"#app",
+    	data:{
+    		cover:''
+    	},
+    	methods:{
+    		findData:function(){
+    			var that = app;
+    			$.ajax({
+    				type:"get",
+    				url:serverHost + "/storeAds/info/1",
+    				success:function(data){
+    					that.cover = data.data.cover
+    				}
+    			});
+//  			$.ajax({
+//  				url:serverHost + '/agents/wxLogin',
+//  				data:{
+//  					code:code
+//  				},
+//  				dataType:'json',
+//  				type:'post',
+//  				success:function(data){
+//  					console.log(32423)
+//  				}
+//  			})
+    		}
+    	}
+    })
+	app.findData()
+</script>

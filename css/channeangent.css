@@ -1,0 +1,511 @@
+body{
+    min-width:1260px;
+}
+/* 顶部 */
+header{
+    width: 100%;
+    min-width:1260px;
+    height: 27.5rem;
+    position: relative;
+    background:url(../img/channelagent/channelbanner.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.navbarcss{
+    position: absolute;
+    z-index: 20;
+    top: 1.35rem;
+    right: 0%;
+}
+.navcheck{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul{
+    overflow: hidden;
+    min-width: 20.6rem;
+}
+.navbarcss>ul>li{
+    float: left;
+    margin-right: 2.55rem;
+    color: #3B81FA;
+    font-size: 0.75rem;
+}
+.navbarcss>ul>li:hover{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul>li>a{
+    color: #3B81FA;
+}
+.navbarcss>ul>li:nth-child(6){
+    margin-right: 2.15rem;
+}
+.indexhader{
+    z-index: 20;
+    position: absolute;
+    top: 1rem;
+    left: 1.55rem;
+    font-size:1.1rem;
+    color: #fff;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+.indexhader>img{
+    float: left;
+    width: 1.2rem;
+    margin-top: 0.1rem;
+    margin-right: 0.45rem;
+    height: 1.35rem;
+}
+.indexhader>label{
+    float: left;
+}
+.contenttext{
+    position: absolute;
+    top: 11rem;
+    z-index: 10;
+    left: 22.5rem;
+    color: #fff;
+    font-size: 1rem;
+}
+.contenttext>div{
+    margin-bottom: 0.275rem;
+}
+.contenttext>title{
+    margin-top: 0.6rem;
+    color: #020202;
+    display: block;
+    line-height: 1rem;
+    font-size: 0.55rem;
+    width: 14.85rem;
+}
+/* 分类 */
+.fourbox{
+    width: 24.7rem;
+    margin: 0 auto;
+    margin-top: 4.55rem;
+}
+.fourbox>h2{
+    font-size: 1rem;
+    text-align: center
+}
+.fourbox>h3{
+    margin-top: 1.2rem;
+    font-size: 0.55rem;
+    text-align: center
+}
+.fourbox>ul{
+    margin-top: 3.5rem;
+    overflow: hidden;
+    width: 24.7rem;
+}
+.fourbox>ul>li{
+    overflow: hidden;
+    float: left;
+}
+.fourbox>ul>li:nth-child(1){
+    margin-right: 2.75rem;
+    margin-bottom: 1.9rem;
+}
+.fourbox>ul>li:nth-child(2){
+    margin-bottom: 1.9rem;
+}
+.fourbox>ul>li:nth-child(3){
+    margin-right: 2.75rem;
+}
+.fourbox>ul>li>img{
+    float: left;
+    width: 4.95rem;
+    height: 4.75rem;
+}
+/* 左侧 */
+.fourboxleftbox{
+    text-align: right;
+    margin-right: 0.5rem;
+    float: left;
+    width: 5.25rem;
+}
+.fourboxleftbox>label{
+    display: block;
+    font-size: 0.65rem;
+    color: #333333;
+    padding-top: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+.fourboxleftbox>div{
+    font-size: 0.3rem;
+    color: #7A7A7A;
+    margin-bottom: 0.25rem;
+}
+/* 右侧 */
+.fourboxright{
+    text-align: left;
+    margin-left: 0.5rem;
+    float: left;
+    width: 5.25rem;
+}
+.fourboxright>label{
+    display: block;
+    font-size: 0.65rem;
+    color: #333333;
+    padding-top: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+.fourboxright>div{
+    font-size: 0.3rem;
+    color: #7A7A7A;
+    margin-bottom: 0.35rem;
+}
+
+/* 工具包 */
+.toolbar{
+    margin-top: 1.975rem;
+    width: 100%;
+    height: 35rem;
+    background:url(../img/channelagent/channelbanner2.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.toolbar>h3{
+    padding-top: 14.85rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+}
+.toolbar>h3>label{
+    font-size: 1.15rem;
+    color: #9CFFBD;
+    margin: 0 0.4rem;
+}
+.smalltoolbartext{
+    display: block;
+    margin-top: 0.9rem;
+    text-align: center;
+    font-size: 0.6rem;
+    color: #fff;
+}
+.toolbar>ul{
+    overflow: hidden;
+    width: 30.75rem;
+    margin: 0 auto;
+    margin-top: 3.9rem;
+}
+.toolbar>ul>li{
+    float: left;
+    height: 3.925rem;
+    text-align: center;
+}
+.toolbar>ul>li>img{
+    width: 2.05rem;
+    height: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+.toolbar>ul>li>div{
+    color: #fff;
+    margin-top: 0.2rem;
+    font-size: 0.55rem;
+}
+.toolbar>ul>li:nth-child(1){
+    width: 4.35rem;
+}
+.toolbar>ul>li:nth-child(2){
+    width: 3.45rem;
+    margin-left: 2.8rem;
+}
+.toolbar>ul>li:nth-child(3){
+    width: 2.45rem;
+    margin-left: 3.75rem;
+}
+.toolbar>ul>li:nth-child(4){
+    width: 3.65rem;
+    margin-left: 3.55rem;
+}
+.toolbar>ul>li:nth-child(5){
+    width: 3.65rem;
+    margin-left: 3.05rem;
+}
+.toolbar>ul>li:nth-child(6){
+    margin-top: 3.6rem;
+    width: 3.65rem;
+}
+.toolbar>ul>li:nth-child(7){
+    width: 3.65rem;
+    margin-top: 3.6rem;
+    margin-left: 3.35rem;
+}
+.toolbar>ul>li:nth-child(8){
+    width: 3.65rem;
+    margin-top: 3.6rem;
+    margin-left: 3.1rem;
+}
+.toolbar>ul>li:nth-child(9){
+    width: 3.65rem;
+    margin-top: 3.6rem;
+    margin-left: 2.95rem;
+}
+.toolbar>ul>li:nth-child(10){
+    width: 3.65rem;
+    margin-top: 3.6rem;
+    margin-left: 3.05rem;
+}
+/* 回报 */
+.returnbox{
+    margin-bottom: 9.2rem;
+    margin-top: 5.35rem;
+}
+.returnbox>h3{
+    font-size: 1.4rem;
+    text-align: center;
+    color: #57A8E9;
+}
+.returnsmalltext{
+    text-align: center;
+    font-size: 1.125rem;
+    color: #252525;
+    margin-top: 1.25rem;
+}
+.returndwbox{
+    margin: 0 auto;
+    margin-top: 6.7rem;
+    width: 34.5rem;
+    height: 10.6rem;
+    border: 0.025rem solid #DBD8D8;
+    position: relative;
+}
+.youhb{
+    width: 7.35rem;
+    text-align: center;
+    position: absolute;
+    font-size: 1.35rem;
+    top: -1rem;
+    left: 2.5rem;
+    background: #fff;
+}
+.ruturnboxpic1{
+    position: absolute;
+    top: -4.8rem;
+    left: 21.8rem;
+    width: 9.6rem;
+    height: 6.6rem;
+}
+.returndwbox>ul{
+    overflow: hidden;
+    width: 32rem;
+    height: 11rem;
+    position: absolute;
+    top: 2.25rem;
+    left: 1.9rem;
+}
+.returndwbox>ul>li{
+    float: left;
+    position: relative;
+}
+.returndwbox>ul>li>div{
+    position: absolute;
+    bottom: 1.8rem;
+    left: 1.15rem;
+    font-size: 0.5rem;
+    width: 6.8rem;
+}
+.returndwbox>ul>li>div>label{
+    color: #F91B1B;
+}
+.returndwbox>ul>li:nth-child(1){
+    width: 10.4rem;
+    margin-top: -0.45rem;
+    margin-left: -0.75rem;
+    margin-right: 1.4rem;
+    height: 12rem;
+    background:url(../img/channelagent/return2.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.returndwbox>ul>li:nth-child(2){
+    width: 10.4rem;
+    margin-top: -0.45rem;
+    margin-left: -0.75rem;
+    margin-right: 1.4rem;
+    height: 12rem;
+    background:url(../img/channelagent/return3.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.returndwbox>ul>li:nth-child(3){
+    width: 10.4rem;
+    margin-top: -0.45rem;
+    margin-left: -0.75rem;
+    height: 12rem;
+    background:url(../img/channelagent/return4.png) no-repeat;
+    background-size: 100% 100%; 
+}
+/* 权益 */
+.equitybox{
+    margin-bottom: 5rem;
+}
+.twobg{
+    position: relative;
+    margin: 0 auto;
+    width: 21.35rem;
+    height: 1.7rem;
+    font-size: 1.7rem;
+    color: #F8F8F8;
+}
+.twobg>div{
+    position: absolute;
+    bottom: -1.1rem;
+    left: 3.6rem;
+    color: #333333;
+    font-size:1.3rem; 
+}
+.equitybox>ul{
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 3.2rem;
+    width: 33.7rem;
+}
+.equitybox>ul>li{
+   float: left;
+   margin-right: 2.2rem;
+   text-align: center;
+   width: 6.7rem;
+   height: 6.4rem;
+   margin-bottom: 4rem;
+}
+.equitybox>ul>li:nth-child(4){
+    margin-right: 0
+}
+.equitybox>ul>li:nth-child(8){
+    margin-right: 0
+}
+.equitybox>ul>li>label{
+    display: block;
+    text-align: center;
+    font-size: 0.55rem;
+    color: #333333;
+    margin-bottom: 0.55rem;
+}
+.equitybox>ul>li>div{
+    color: #A3A3A3;
+    font-size: 0.4rem;
+}
+.equimg1{
+    width: 3rem;
+    height: 3.15rem;
+    margin-bottom: 1rem;
+}
+/* 代理商成功展示 */
+.agentshow{
+    margin-top: 1rem;
+    margin-bottom: 6.3rem;
+}
+.twobgtwo{
+    position: relative;
+    margin: 0 auto;
+    width: 22.45rem;
+    height: 2.2rem;
+    font-size: 2.2rem;
+    color: #F8F8F8;
+}
+.twobgtwo>div{
+    position: absolute;
+    bottom: -1.5rem;
+    left: 3.35rem;
+    color: #333333;
+    font-size:1.4rem; 
+}
+.agentshow>ul{
+    overflow: hidden;
+    width: 30.65rem;
+    margin: 0 auto;
+    margin-top: 5.2rem;
+}
+.agentshow>ul>li{
+    width: 5.45rem;
+    height: 5.55rem;
+    float: left;
+    margin-right: 0.85rem;
+}
+.agentshow>ul>li>img{
+    width: 100%;
+    height: 100%;
+}
+.agentshow>ul>li.noright{
+    margin-right: 0;
+}
+/* 申请代理 */
+.sqagentbox{
+    position: relative;
+    margin-top: 15.25rem;
+    width: 100%;
+    height: 25.55rem;
+    background:url(../img/channelagent/channelbanner3.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.sqagentform{
+    position: absolute;
+    left: 8.2rem;
+    top: -8.7rem;
+    width: 32.6rem;
+    height: 28.3rem;
+    background:url(../img/channelagent/sqbg.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.sqagentform>h3{
+    font-size: 1.1rem;
+    text-align: center;
+    color: #333333;
+    padding-top: 2.2rem;
+}
+.agentsmlltext{
+    text-align: center;
+    margin-top:0.75rem;
+    font-size:  0.6rem;
+    color: #787878;
+    margin-bottom: 1.5rem;
+}
+.lineinput{
+    padding-left: 0.75rem;
+    margin:0 auto;
+    display: block;
+    font-size: 0.55rem;
+    width: 27.5rem;
+    height: 2.05rem;
+    margin-bottom: 0.5rem;
+    border:0.025rem solid #D0CBCB;
+}
+.getcodebox{
+    width: 27.5rem;
+    height: 2.05rem; 
+    margin:0 auto;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.getcodebox>input{
+    float: left;
+    padding-left: 0.75rem;
+    font-size: 0.55rem;
+    width: 21.8rem;
+    height: 2.05rem;
+    border:0.025rem solid #D0CBCB;
+}
+.getcodebox>label{
+    float: left;
+    margin-left: 0.3rem;
+    display: block;
+    width: 5.35rem;
+    font-size: 0.55rem;
+    height: 2.05rem;
+    line-height: 2.05rem;
+    background: #E2DFDF;
+    color: #fff;
+    text-align: center
+}
+.pushbtn{
+    width: 7.5rem;
+    height: 2.2rem;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2.2rem;
+    font-size: 0.65rem;
+    color: #fff;
+    margin-top: 2.6rem;
+    background:url(../img/channelagent/btn.png) no-repeat;
+    background-size: 100% 100%; 
+}

@@ -1,0 +1,242 @@
+body{
+    min-width:1260px;
+    background: #F5F7F9;
+}
+/* 顶部 */
+header{
+    width: 100%;
+    min-width:1260px;
+    height: 10.85rem;
+    position: relative;
+    background:url(../img/news/newsbanner.png) no-repeat;
+    background-size: 100% 100%; 
+}
+.navbarcss{
+    position: absolute;
+    z-index: 20;
+    top: 1.35rem;
+    right: 0%;
+}
+.navcheck{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul{
+    overflow: hidden;
+    min-width: 20.6rem;
+}
+.navbarcss>ul>li{
+    float: left;
+    margin-right: 2.55rem;
+    color: #3B81FA;
+    font-size: 0.75rem;
+}
+.navbarcss>ul>li:hover{
+    padding-bottom: 0.25rem;
+    border-bottom: 0.075rem solid #307BF6 ;
+}
+.navbarcss>ul>li>a{
+    color: #3B81FA;
+}
+.navbarcss>ul>li:nth-child(6){
+    margin-right: 2.15rem;
+}
+.indexhader{
+    z-index: 20;
+    position: absolute;
+    top: 1rem;
+    left: 1.55rem;
+    font-size:1.1rem;
+    color: #fff;
+    overflow: hidden;
+    /* font-weight: bold; */
+}
+.indexhader>img{
+    float: left;
+    width: 1.2rem;
+    margin-top: 0.1rem;
+    margin-right: 0.45rem;
+    height: 1.35rem;
+}
+.indexhader>label{
+    float: left;
+}
+/* 新闻列表 */
+.newscontent{
+    width: 35.3rem;
+    margin: 0 auto;
+    margin-top: 1.95rem;
+    overflow: hidden;
+    margin-bottom: 3.55rem;
+}
+.newsleftlist{
+    float: left;
+    margin-right: 0.25rem;
+    width: 22.4rem;
+}
+.newdetail{
+    width: 22.4rem;
+    margin-bottom: 0.3rem;
+    padding-top: 0.45rem;
+    padding-left: 0.3rem;
+    height:3.65rem;
+    background: #fff;
+   overflow: hidden; 
+}
+.newdetail a>img.newscover{
+    float: left;
+    width: 4.5rem;
+    height: 2.75rem;
+}
+.nessdetailcontent{
+    float: left;
+    margin-left: 0.375rem;
+    width: 16.5rem;
+    height: 2.9rem;
+}
+.newsheader{
+    font-size: 0.45rem;
+    color: #676767;
+}
+.newslabelbox>label{
+    display: block;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height: 0.55rem;
+    width: 1.675rem;
+    color: #fff;
+    height: 0.55rem;
+}
+.newslabelbox{
+    background:url(../img/news/newslabel.png) no-repeat;
+    background-size: 100% 100%; 
+    display: inline-block;
+    width: 1.85rem;
+    margin-right: 0.1rem;
+    height: 0.55rem;
+}
+.newscontenttext{
+    width: 16.5rem;
+    margin-top: 0.5rem;
+    height: 1rem;
+    overflow: hidden;
+    text-align: left;
+    font-size: 0.4rem;
+    color: #666666
+}
+.newscontentbtn{
+ /* width: 3.2rem; */
+ font-size: 0.3rem;
+ float: right;
+ float: right;
+}
+.newstime{
+    width: 0.4rem;
+    height: 0.4rem;
+}
+.newswatch{
+    width: 0.6rem;
+    margin-left: 0.5rem;
+    height: 0.3rem;
+}
+/* 右侧导航栏 */
+.newsrightlist{
+    float: left;
+    width: 12.3rem;
+    width: 12.3rem;
+}
+.newsrighttop{
+    width: 12.2rem;
+    background: #fff;
+    height: 9.25rem;
+}
+.newsrighttopcontent{
+    width: 11.2rem;
+    margin: 0 auto;
+    padding-top: 0.3rem;
+}
+.nearnews{
+    font-size: 0.5rem;
+    padding-bottom: 0.35rem ;
+    font-weight: 600;
+    border-bottom: 0.025rem solid #EFEBEB;
+    color: #666666;
+}
+.nearnewscontent{
+    font-size: 0.4rem;
+    padding: 0.5rem 0;
+    border-bottom: 0.025rem dashed #EFEBEB;
+}
+.noborder{
+    border-bottom: none;
+}
+/* 右侧新闻下半部分 */
+.newsrightbottom{
+    margin-top: 0.3rem;
+    width: 12.2rem;
+    background: #fff;
+    /* height: 9.8rem; */
+    padding-bottom: 0.25rem;
+}
+.newtypebox{
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+.newstypelist{
+    float: left;
+    margin-left: 0.125rem;
+    width: 5.5rem;
+}
+.newstypelist>li{
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 0.3rem;
+    font-size: 0.375rem;
+}
+.newstypelisttwo{
+    float: left;
+    margin-left: 0.675rem;
+    width: 4.8rem;
+}
+.newstypelisttwo>li{
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 0.3rem;
+    font-size: 0.375rem;
+}
+/* 页码 */
+.pagenumbox{
+    width: 22.1rem;
+    height: 1.95rem;
+    background: #FFFFFF;
+    padding-top: 0.5rem;
+    /* line-height: 1.95rem; */
+}
+.pagenum{
+    overflow: hidden;
+    width: 6.62rem;
+    margin: 0 auto;
+}
+.pagenum>li{
+    margin-right: 0.375rem;
+    font-size: 0.45rem;
+    text-align: center;
+    line-height: 0.925rem;
+    width: 0.925rem;
+    height: 0.925rem;
+    border-radius: 0.1rem;
+    float: left;
+    background: #F3F4F4;
+    cursor: pointer;
+}
+.pagenum>li>img{
+    widows: 0.425rem; 
+    height: 0.275rem;
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg); /* IE 9 */
+}
+.pagenum>li.nowpagenum{
+    background: #307BF6;
+    color: #FFFFFF;
+}
+

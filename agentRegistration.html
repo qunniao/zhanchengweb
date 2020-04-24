@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/agentRegistration.css" />
+		<script src="./js/adapt.js"></script>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title>代理注册</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="choose">
+				<span class="chooseTitle">请选择</span>
+				<div class="agentItema">
+					<div class="left"></div>
+					<div class="right">
+						<span class="title">董事</span>
+						<span class="content">欢迎加入我们</span>
+					</div>
+				</div>
+				<div class="agentItema">
+					<div class="left"></div>
+					<div class="right">
+						<span class="title">钻石</span>
+						<span class="content">消费不低于7400.00享5折优惠</span>
+					</div>
+				</div>
+				<div class="agentItema">
+					<div class="left"></div>
+					<div class="right">
+						<span class="title">省代</span>
+						<span class="content">消费不低于940.00享6折优惠</span>
+					</div>
+				</div>
+				<div class="agentItema">
+					<div class="left"></div>
+					<div class="right">
+						<span class="title">市代</span>
+						<span class="content">完成消费享7折优惠</span>
+					</div>
+				</div>
+				<div class="agentItema">
+					<div class="left"></div>
+					<div class="right">
+						<span class="title">VIP399套餐</span>
+						<span class="content">完成消费享9优惠</span>
+					</div>
+				</div>
+				<div class="dibua"></div>
+			</div>
+			<div class="dibu">
+				<div class="leixing">您正在通过<b>总部</b>进行注册</div>
+				<button @click='submit'>确认</button>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#app',
+		data:{
+			
+		},
+		methods:{
+			findData:function(){
+				localStorage.removeItem("agent")
+			},
+			submit:function(){
+				var that = app;
+				if(localStorage.agent == undefined){
+					alert("请选择代理等级")
+					return false;
+				} else if(localStorage.agent == 0){
+					var levelId = 0
+				} else if(localStorage.agent == 1){
+					var levelId = 1
+				} else if(localStorage.agent == 2){
+					var levelId = 2
+				} else if(localStorage.agent == 3){
+					var levelId = 3
+				} else if(localStorage.agent == 4){
+					var levelId = 4
+				}
+				window.location.href = 'chooseCommodity.html?levelId='+levelId
+			}
+		}
+	})
+	app.findData()
+	let filter = document.getElementsByClassName("agentItema")
+	for(let i = 0; i < filter.length; i++) {
+		filter[i].addEventListener('click', function() {
+			filter[i].classList.add('active')
+			console.log(i)
+			localStorage.setItem("agent",i)
+			for(let j = 0; j < filter.length; j++) {
+				if(i != j) {
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+	
+
+</script>
